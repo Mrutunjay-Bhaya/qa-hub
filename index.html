@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QA Environment Hub</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./modal-overrides.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">Q</span><span>QA Environment Hub</span></div>
+        <nav aria-label="Primary navigation">
+          <button class="nav-item" data-view="dashboard">Dashboard</button>
+          <button class="nav-item" data-view="environments">Environment Hub</button>
+          <button class="nav-item" data-view="builds">Mobile Build Hub</button>
+          <button class="nav-item active" data-view="services">Service Code Hub</button>
+          <button class="nav-item" data-view="import">Import / Export</button>
+        </nav>
+        <div class="sidebar-note">Data is stored locally in this browser.</div>
+      </aside>
+      <main>
+        <header class="topbar"><div id="crumb">Service Code Hub</div><button class="button secondary" id="exportBtn">Export data</button></header>
+        <div id="toast" role="status" aria-live="polite"></div>
+        <section id="dashboard" class="view"></section>
+        <section id="environments" class="view hidden"></section>
+        <section id="builds" class="view hidden"></section>
+        <section id="services" class="view"></section>
+        <section id="import" class="view hidden"></section>
+      </main>
+    </div>
+    <dialog id="modal"></dialog>
+    <script src="./app.js"></script>
+  </body>
+</html>
